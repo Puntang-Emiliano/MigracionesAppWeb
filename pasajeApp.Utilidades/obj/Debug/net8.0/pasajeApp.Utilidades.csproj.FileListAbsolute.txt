@@ -1,0 +1,11 @@
+C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Utilidades\bin\Debug\net8.0\pasajeApp.Utilidades.deps.json
+C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Utilidades\bin\Debug\net8.0\pasajeApp.Utilidades.dll
+C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Utilidades\bin\Debug\net8.0\pasajeApp.Utilidades.pdb
+C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Utilidades\obj\Debug\net8.0\pasajeApp.Utilidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Utilidades\obj\Debug\net8.0\pasajeApp.Utilidades.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Utilidades\obj\Debug\net8.0\pasajeApp.Utilidades.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Utilidades\obj\Debug\net8.0\pasajeApp.Utilidades.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Utilidades\obj\Debug\net8.0\pasajeApp.Utilidades.dll
+C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Utilidades\obj\Debug\net8.0\refint\pasajeApp.Utilidades.dll
+C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Utilidades\obj\Debug\net8.0\pasajeApp.Utilidades.pdb
+C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Utilidades\obj\Debug\net8.0\ref\pasajeApp.Utilidades.dll
