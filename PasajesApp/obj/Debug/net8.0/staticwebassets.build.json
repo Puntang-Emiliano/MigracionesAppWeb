@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YGv4VtxCdXCjgyAYc5kxllALcietAoP/yb5l77J0yhg=",
+  "Hash": "8h/IIXI+z645G1enOR+BF7jSnwghLuGTsiSrn7SyW7I=",
   "Source": "PasajesApp",
   "BasePath": "_content/PasajesApp",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Usuario\\Desktop\\PasajesApp\\PasajesApp\\wwwroot\\js\\categoria.js",
+      "SourceId": "PasajesApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Usuario\\Desktop\\PasajesApp\\PasajesApp\\wwwroot\\",
+      "BasePath": "_content/PasajesApp",
+      "RelativePath": "js/categoria.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\categoria.js"
     },
     {
       "Identity": "C:\\Users\\Usuario\\Desktop\\PasajesApp\\PasajesApp\\wwwroot\\js\\site.js",

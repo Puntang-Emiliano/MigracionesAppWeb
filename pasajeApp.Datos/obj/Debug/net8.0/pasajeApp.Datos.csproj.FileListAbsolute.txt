@@ -17,3 +17,4 @@ C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Datos\obj\Debug\net8.0\refint\pasa
 C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Datos\obj\Debug\net8.0\pasajeApp.Datos.pdb
 C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Datos\obj\Debug\net8.0\pasajeApp.Datos.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Datos\obj\Debug\net8.0\ref\pasajeApp.Datos.dll
+C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Datos\obj\Debug\net8.0\pasajeApp.Datos.sourcelink.json

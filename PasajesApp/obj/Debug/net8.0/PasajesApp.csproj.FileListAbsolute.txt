@@ -528,3 +528,4 @@ C:\Users\Usuario\Desktop\PasajesApp\PasajesApp\bin\Debug\net8.0\pasajeApp.Utilid
 C:\Users\Usuario\Desktop\PasajesApp\PasajesApp\bin\Debug\net8.0\pasajeApp.Datos.pdb
 C:\Users\Usuario\Desktop\PasajesApp\PasajesApp\bin\Debug\net8.0\pasajeApp.Modelo.pdb
 C:\Users\Usuario\Desktop\PasajesApp\PasajesApp\bin\Debug\net8.0\pasajeApp.Utilidades.pdb
+C:\Users\Usuario\Desktop\PasajesApp\PasajesApp\obj\Debug\net8.0\PasajesApp.sourcelink.json

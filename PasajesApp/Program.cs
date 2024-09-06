@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using pasajeApp.Datos.Data.Repository;
+using pasajeApp.Datos.Data.Repository.IRepository;
 using PasajesApp.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,10 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+//Agrego linea de codigo para la inyeccion de Independencias
+builder.Services.AddScoped<IContenedorTrabajo, ContenedorTrabajo>();
+
 
 var app = builder.Build();
 

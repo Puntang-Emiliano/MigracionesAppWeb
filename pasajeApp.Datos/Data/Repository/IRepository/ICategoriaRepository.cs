@@ -7,12 +7,10 @@ using System.Threading.Tasks;
 
 namespace pasajeApp.Datos.Data.Repository.IRepository
 {
-    public interface ICategoriaRepository
-    {
         public interface ICategoriaRepository : IRepository<Categoria> 
         {
-            void Update(Categoria categoria);
+         void Update(Categoria categoria);
         }
 
-    }
+    
 }

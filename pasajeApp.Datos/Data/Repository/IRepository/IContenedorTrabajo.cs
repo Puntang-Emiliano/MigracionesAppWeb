@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace pasajeApp.Datos.Data.Repository.IRepository
 {
-    internal interface IContenedorTrabajo: IDisposable
+    public interface IContenedorTrabajo: IDisposable
     {
         // Aqui se deben ir agregando los diferentes repositorios
         ICategoriaRepository Categoria {  get; }
