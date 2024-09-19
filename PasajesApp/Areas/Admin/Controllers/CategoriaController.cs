@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using pasajeApp.Datos.Data.Repository.IRepository;
+using Microsoft.AspNetCore.Mvc;
+using pasajeApp.Modelo;
 
-namespace PasajesApp.Areas.Admin.Controllers
+
+namespace APPnet8.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class CategoriaController : Controller
