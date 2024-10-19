@@ -8358,11 +8358,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\PasajesApp\\PasajesApp\\PasajesApp.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\Proyectos\\PasajesApp\\PasajesApp\\PasajesApp.csproj",
       "projectName": "PasajesApp",
-      "projectPath": "C:\\Users\\Usuario\\Desktop\\PasajesApp\\PasajesApp\\PasajesApp.csproj",
+      "projectPath": "C:\\Users\\Usuario\\Desktop\\Proyectos\\PasajesApp\\PasajesApp\\PasajesApp.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\Desktop\\PasajesApp\\PasajesApp\\obj\\",
+      "outputPath": "C:\\Users\\Usuario\\Desktop\\Proyectos\\PasajesApp\\PasajesApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -8384,8 +8384,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Usuario\\Desktop\\PasajesApp\\pasajeApp.Datos\\pasajeApp.Datos.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\Desktop\\PasajesApp\\pasajeApp.Datos\\pasajeApp.Datos.csproj"
+            "C:\\Users\\Usuario\\Desktop\\Proyectos\\PasajesApp\\pasajeApp.Datos\\pasajeApp.Datos.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\Desktop\\Proyectos\\PasajesApp\\pasajeApp.Datos\\pasajeApp.Datos.csproj"
             }
           }
         }
@@ -8451,7 +8451,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

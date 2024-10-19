@@ -529,3 +529,16 @@ C:\Users\Usuario\Desktop\PasajesApp\PasajesApp\bin\Debug\net8.0\pasajeApp.Datos.
 C:\Users\Usuario\Desktop\PasajesApp\PasajesApp\bin\Debug\net8.0\pasajeApp.Modelo.pdb
 C:\Users\Usuario\Desktop\PasajesApp\PasajesApp\bin\Debug\net8.0\pasajeApp.Utilidades.pdb
 C:\Users\Usuario\Desktop\PasajesApp\PasajesApp\obj\Debug\net8.0\PasajesApp.sourcelink.json
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\PasajesApp\obj\Debug\net8.0\PasajesApp.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\PasajesApp\obj\Debug\net8.0\PasajesApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\PasajesApp\obj\Debug\net8.0\PasajesApp.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\PasajesApp\obj\Debug\net8.0\PasajesApp.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\PasajesApp\obj\Debug\net8.0\PasajesApp.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\PasajesApp\obj\Debug\net8.0\PasajesApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\PasajesApp\obj\Debug\net8.0\PasajesApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\PasajesApp\obj\Debug\net8.0\PasajesApp.RazorAssemblyInfo.cache
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\PasajesApp\obj\Debug\net8.0\PasajesApp.RazorAssemblyInfo.cs
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\PasajesApp\obj\Debug\net8.0\PasajesApp.sourcelink.json
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\PasajesApp\obj\Debug\net8.0\PasajesApp.dll
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\PasajesApp\obj\Debug\net8.0\refint\PasajesApp.dll
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\PasajesApp\obj\Debug\net8.0\PasajesApp.pdb

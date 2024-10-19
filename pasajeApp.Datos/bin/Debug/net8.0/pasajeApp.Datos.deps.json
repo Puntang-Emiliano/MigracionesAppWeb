@@ -982,12 +982,18 @@
       },
       "pasajeApp.Modelo/1.0.0": {
         "runtime": {
-          "pasajeApp.Modelo.dll": {}
+          "pasajeApp.Modelo.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "pasajeApp.Utilidades/1.0.0": {
         "runtime": {
-          "pasajeApp.Utilidades.dll": {}
+          "pasajeApp.Utilidades.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

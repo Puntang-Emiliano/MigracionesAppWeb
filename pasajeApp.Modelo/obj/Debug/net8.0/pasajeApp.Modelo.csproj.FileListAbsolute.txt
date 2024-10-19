@@ -9,3 +9,16 @@ C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Modelo\obj\Debug\net8.0\pasajeApp.
 C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Modelo\obj\Debug\net8.0\refint\pasajeApp.Modelo.dll
 C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Modelo\obj\Debug\net8.0\pasajeApp.Modelo.pdb
 C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Modelo\obj\Debug\net8.0\ref\pasajeApp.Modelo.dll
+C:\Users\Usuario\Desktop\PasajesApp\pasajeApp.Modelo\obj\Debug\net8.0\pasajeApp.Modelo.sourcelink.json
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\pasajeApp.Modelo\bin\Debug\net8.0\pasajeApp.Modelo.deps.json
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\pasajeApp.Modelo\bin\Debug\net8.0\pasajeApp.Modelo.dll
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\pasajeApp.Modelo\bin\Debug\net8.0\pasajeApp.Modelo.pdb
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\pasajeApp.Modelo\obj\Debug\net8.0\pasajeApp.Modelo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\pasajeApp.Modelo\obj\Debug\net8.0\pasajeApp.Modelo.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\pasajeApp.Modelo\obj\Debug\net8.0\pasajeApp.Modelo.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\pasajeApp.Modelo\obj\Debug\net8.0\pasajeApp.Modelo.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\pasajeApp.Modelo\obj\Debug\net8.0\pasajeApp.Modelo.sourcelink.json
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\pasajeApp.Modelo\obj\Debug\net8.0\pasajeApp.Modelo.dll
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\pasajeApp.Modelo\obj\Debug\net8.0\refint\pasajeApp.Modelo.dll
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\pasajeApp.Modelo\obj\Debug\net8.0\pasajeApp.Modelo.pdb
+C:\Users\Usuario\Desktop\Proyectos\PasajesApp\pasajeApp.Modelo\obj\Debug\net8.0\ref\pasajeApp.Modelo.dll

@@ -12,5 +12,6 @@ namespace pasajeApp.Modelo
         [StringLength(50)]
         public string Nombre { get; set; }
         public int? habilitada { get; set; }
+
     }
 }

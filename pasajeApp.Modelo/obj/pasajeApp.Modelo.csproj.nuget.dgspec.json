@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Desktop\\PasajesApp\\pasajeApp.Modelo\\pasajeApp.Modelo.csproj": {}
+    "C:\\Users\\Usuario\\Desktop\\Proyectos\\PasajesApp\\pasajeApp.Modelo\\pasajeApp.Modelo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Desktop\\PasajesApp\\pasajeApp.Modelo\\pasajeApp.Modelo.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\Proyectos\\PasajesApp\\pasajeApp.Modelo\\pasajeApp.Modelo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\PasajesApp\\pasajeApp.Modelo\\pasajeApp.Modelo.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\Proyectos\\PasajesApp\\pasajeApp.Modelo\\pasajeApp.Modelo.csproj",
         "projectName": "pasajeApp.Modelo",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\PasajesApp\\pasajeApp.Modelo\\pasajeApp.Modelo.csproj",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\Proyectos\\PasajesApp\\pasajeApp.Modelo\\pasajeApp.Modelo.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\PasajesApp\\pasajeApp.Modelo\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\Proyectos\\PasajesApp\\pasajeApp.Modelo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
