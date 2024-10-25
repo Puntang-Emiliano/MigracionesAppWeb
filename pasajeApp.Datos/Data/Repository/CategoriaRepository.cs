@@ -7,10 +7,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
+
 
 namespace pasajeApp.Datos.Data.Repository
 {
-    internal class CategoriaRepository : Repository<Categoria> , ICategoriaRepository
+    internal class CategoriaRepository : Repository<Categoria>, ICategoriaRepository
     {
         private readonly ApplicationDbContext _db;
 
@@ -28,8 +31,14 @@ namespace pasajeApp.Datos.Data.Repository
             _db.SaveChanges();
 
         }
-    }
-   
 
-    
+        public IEnumerable<SelectListItem> GetListaCategorias()
+        {
+            return _db.Categoria.Select(i => new SelectListItem()
+            {
+                Text = i.Nombre,
+                Value = i.Id.ToString()
+            });
+        }
+    }
 }

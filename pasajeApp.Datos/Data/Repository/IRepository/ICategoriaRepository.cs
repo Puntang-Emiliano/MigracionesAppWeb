@@ -1,4 +1,5 @@
-﻿using pasajeApp.Modelo;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using pasajeApp.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace pasajeApp.Datos.Data.Repository.IRepository
         public interface ICategoriaRepository : IRepository<Categoria> 
         {
          void Update(Categoria categoria);
+        IEnumerable<SelectListItem> GetListaCategorias();
         }
 
     
