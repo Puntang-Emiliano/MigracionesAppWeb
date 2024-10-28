@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PasajesApp.Data;
 
@@ -11,9 +12,11 @@ using PasajesApp.Data;
 namespace PasajesApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241025154437_AgregarPrecioDecimalArticulo")]
+    partial class AgregarPrecioDecimalArticulo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -240,6 +243,7 @@ namespace PasajesApp.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FechaCreacion")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
@@ -252,10 +256,8 @@ namespace PasajesApp.Data.Migrations
                     b.Property<decimal>("precio")
                         .HasColumnType("decimal(18, 2)");
 
-                    b.Property<int>("stock")
-                        .HasColumnType("int");
-
                     b.Property<string>("urlImagen")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdArticulo");

@@ -1,9 +1,7 @@
-﻿  @model PasajesApp.Areas.Admin.ViewModels.ArticuloMV
-
-
+﻿@model PasajesApp.Areas.Admin.ViewModels.ArticuloMV
 
 @{
-    ViewData["Title"] = "Crear Articulo";
+    ViewData["Title"] = "Crear Artículo";
 }
 
 <br />
@@ -31,34 +29,74 @@
                     <label asp-for="Articulo.Descripcion"></label>
                 </div>
                 <div class="col-8">
-                    <textarea asp-for="Articulo.Descripcion" class="form-control" style="height: 30px;"></textarea>
+                    <textarea asp-for="Articulo.Descripcion" class="form-control" style="height: 100px;"></textarea>
                     <span asp-validation-for="Articulo.Descripcion" class="text-danger"></span>
                 </div>
             </div>
 
             <br />
-           
-           <div class="form-group row">
-                <div class="col-4">
-                    <label for="Categoría">Categoría</label>
-                </div>
-                <div class="col-8">
-                    @Html.DropDownListFor(m => m.Articulo.Categoria, Model.ListaCategorias,
-                             "-Seleccionar categoría-", new { @class = "form-control" })
-                    <span asp-validation-for="Articulo.Categoria" class="text-danger"></span>
-                </div>
-            </div>
-            <br />
+
             <div class="form-group row">
                 <div class="col-4">
-                    <label asp-for="Articulo.urlImagen"></label>
+                    <label asp-for="Articulo.CategoriaId">Categoría</label>
+                </div>
+                <div class="col-8">
+                    @Html.DropDownListFor(m => m.Articulo.CategoriaId, Model.ListaCategorias, "-Seleccionar categoría-", new { @class = "form-control" })
+                    <span asp-validation-for="Articulo.CategoriaId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Articulo.urlImagen">Imagen</label>
                 </div>
                 <div class="col-8">
                     <input type="file" name="archivos" id="subidaArchivo" class="form-control" />
                     <span asp-validation-for="Articulo.urlImagen" class="text-danger"></span>
                 </div>
             </div>
-         
+
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Articulo.habilitada">Habilitada</label>
+                </div>
+                <div class="col-8">
+                    <select asp-for="Articulo.habilitada" class="form-control">
+                        <option value="">-Seleccionar estado-</option>
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                    <span asp-validation-for="Articulo.habilitada" class="text-danger"></span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Articulo.stock">Stock</label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Articulo.stock" type="number" class="form-control" placeholder="Ingresa el stock" />
+                    <span asp-validation-for="Articulo.stock" class="text-danger"></span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Articulo.precio">Precio</label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Articulo.precio" type="number" step="0.01" class="form-control" placeholder="Ingresa el precio" />
+                    <span asp-validation-for="Articulo.precio" class="text-danger"></span>
+                </div>
+            </div>
 
             <br />
 
@@ -72,7 +110,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </form>
 
@@ -91,5 +128,3 @@
         });
     </script>
 }
-
-  

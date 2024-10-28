@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using pasajeApp.Datos.Data.Repository.IRepository;
 using PasajesApp.Areas.Admin.ViewModels;
 using pasajeApp.Modelo;
+using PasajesApp.Data.Migrations;
 
 
 [Area("Admin")]
@@ -29,7 +30,7 @@ public class ArticuloController : Controller
     {
         ArticuloMV articuloVM = new ArticuloMV()
         {
-            Articulo = new Articulo(),
+            Articulo = new pasajeApp.Modelo.Articulo(),
             ListaCategorias = _contenedorTrabajo.Categoria.GetListaCategorias()
         };
 
@@ -92,33 +93,98 @@ public class ArticuloController : Controller
     //    return View(articulo);
     //}
 
+    // Método GET para la página de edición
+    [HttpGet]
+    //public IActionResult Edit(int id)
+    //{
+    //    Articulo articulo = _contenedorTrabajo.Articulo.Get(id);
+    //    if (articulo == null)
+    //    {
+    //        return NotFound();
+    //    }
+
+    //    return View(articulo);
+    //}
+
+    //// Método POST para editar el artículo
+    //[HttpPost]
+    //[ValidateAntiForgeryToken]
+    //public IActionResult Edit(Articulo articulo)
+    //{
+    //    if (ModelState.IsValid)
+    //    {
+    //        _contenedorTrabajo.Articulo.Update(articulo);
+    //        _contenedorTrabajo.Save();
+    //        return RedirectToAction("Index");
+    //    }
+
+    //    return View(articulo);
+    //}
+
     [HttpGet]
     public IActionResult Edit(int id)
     {
-        ViewBag.id = new SelectList(_contenedorTrabajo.Categoria.GetListaCategorias(), "Id", "habilitada");
-        Articulo articulo = new Articulo();
-        articulo = _contenedorTrabajo.Articulo.Get(id);
+        var articulo = _contenedorTrabajo.Articulo.Get(id);
         if (articulo == null)
         {
             return NotFound();
         }
 
-        return View();
-    }
+        var viewModel = new ArticuloMV
+        {
+            Articulo = articulo,
+            ListaCategorias = _contenedorTrabajo.Categoria.GetAll().Select(c => new SelectListItem
+            {
+                Text = c.Nombre,
+                Value = c.Id.ToString()
+            }).ToList()
+        };
 
+        // Para seleccionar la categoría actual
+        viewModel.Articulo.CategoriaId = articulo.CategoriaId;
+
+        return View(viewModel);
+    }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Edit(Articulo articulo)
+    public IActionResult Edit(ArticuloMV viewModel)
     {
         if (ModelState.IsValid)
         {
-            _contenedorTrabajo.Articulo.Update(articulo);
+            // Obtén el artículo existente
+            var articuloExistente = _contenedorTrabajo.Articulo.Get(viewModel.Articulo.IdArticulo);
+            if (articuloExistente == null)
+            {
+                return NotFound();
+            }
+
+            // Actualiza los campos deseados
+            articuloExistente.Nombre = viewModel.Articulo.Nombre;
+            articuloExistente.Descripcion = viewModel.Articulo.Descripcion;
+            articuloExistente.precio = viewModel.Articulo.precio;
+            articuloExistente.stock = viewModel.Articulo.stock;
+            articuloExistente.CategoriaId = viewModel.Articulo.CategoriaId;
+            articuloExistente.habilitada = viewModel.Articulo.habilitada;
+            articuloExistente.urlImagen = viewModel.Articulo.urlImagen;
+
+            // Guarda los cambios en la base de datos
+            _contenedorTrabajo.Articulo.Update(articuloExistente);
             _contenedorTrabajo.Save();
-            return RedirectToAction("Index");
+
+            return RedirectToAction(nameof(Index));
         }
-        return View(articulo);
+
+        // Si el estado del modelo no es válido, vuelve a cargar las categorías
+        viewModel.ListaCategorias = _contenedorTrabajo.Categoria.GetAll().Select(c => new SelectListItem
+        {
+            Text = c.Nombre,
+            Value = c.Id.ToString()
+        }).ToList();
+
+        return View(viewModel);
     }
+
 
 
     #region Llamadas  a la APi

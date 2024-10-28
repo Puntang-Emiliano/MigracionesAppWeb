@@ -7,24 +7,24 @@ $(document).ready(function () {
 function cargarDatatable() {
     dataTable = $("#tblArticulos").DataTable({
         "ajax": {
-            "url": "/admin/articulo/GetAll",  
+            "url": "/admin/articulo/GetAll",
             "type": "GET",
             "datatype": "json"
         },
         "columns": [
-            { "data": "id", "width": "5%" },  
-            { "data": "nombre", "width": "30%" },  
-            { "data": "precio", "width": "15%" },  
-            { "data": "stock", "width": "10%" },  
+            { "data": "IdArticulo", "width": "5%" },
+            { "data": "nombre", "width": "30%" },
+            { "data": "precio", "width": "15%" },
+            { "data": "stock", "width": "10%" },
             {
-                "data": "habilitado",  
+                "data": "habilitado",
                 "width": "10%",
                 "render": function (data) {
-                    return data ? "Sí" : "No";  
+                    return data ? "Sí" : "No";
                 }
             },
             {
-                "data": "id",
+                "data": "IdArticulo",
                 "render": function (data) {
                     return `<div class="text-center"> 
                                 <a href="/Admin/Articulo/Edit/${data}" class="btn btn-success text-white" style="cursor:pointer; width:140px;">
