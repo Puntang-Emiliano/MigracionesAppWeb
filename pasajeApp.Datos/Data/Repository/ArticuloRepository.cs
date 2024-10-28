@@ -12,6 +12,7 @@ namespace pasajeApp.Datos.Data.Repository
 {
     internal class ArticuloRepository : Repository<Articulo>, IArticuloRepository
     {
+
         private readonly ApplicationDbContext _db;
 
         public ArticuloRepository(ApplicationDbContext db) : base(db)
@@ -19,18 +20,27 @@ namespace pasajeApp.Datos.Data.Repository
             _db = db;
         }
 
+        //se declara el metodo update por cuera de la interface generica y lo hacemoS DESDE AQUI
+        // ESTO ES POR EF QUE SE ENCARGA DEL PASO DE LOS DATOS.
+
         public void Update(Articulo articulo)
         {
-            var objbaseDato = _db.Articulo.FirstOrDefault(x => x.IdArticulo == articulo.IdArticulo);
+            var objbaseDato = _db.Articulo.FirstOrDefault(x => x.Id == articulo.Id);
+
             if (objbaseDato != null)
             {
                 objbaseDato.Nombre = articulo.Nombre;
-                objbaseDato.Descripcion = articulo.Descripcion;
-                objbaseDato.FechaCreacion = articulo.FechaCreacion;
-                objbaseDato.urlImagen = articulo.urlImagen;
-                objbaseDato.CategoriaId = articulo.CategoriaId;
+                objbaseDato.Categoria = articulo.Categoria;
+                objbaseDato.precio = articulo.precio;
+                objbaseDato.habilitada = articulo.habilitada;
                 _db.SaveChanges();
             }
+            else
+            {
+                throw new Exception("El artículo no fue encontrado en la base de datos");
+            }
+
         }
+
     }
 }

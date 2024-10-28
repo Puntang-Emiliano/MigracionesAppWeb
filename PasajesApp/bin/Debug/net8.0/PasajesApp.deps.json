@@ -3147,6 +3147,9 @@
         }
       },
       "pasajeApp.Modelo/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc": "2.2.0"
+        },
         "runtime": {
           "pasajeApp.Modelo.dll": {
             "assemblyVersion": "1.0.0",

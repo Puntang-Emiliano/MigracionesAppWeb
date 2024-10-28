@@ -8,7 +8,7 @@ using PasajesApp.Data;
 
 #nullable disable
 
-namespace PasajesApp.Data.Migrations
+namespace pasajeApp.Datos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -226,39 +226,27 @@ namespace PasajesApp.Data.Migrations
 
             modelBuilder.Entity("pasajeApp.Modelo.Articulo", b =>
                 {
-                    b.Property<int>("IdArticulo")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdArticulo"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("CategoriaId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Descripcion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FechaCreacion")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int?>("habilitada")
                         .HasColumnType("int");
 
                     b.Property<decimal>("precio")
-                        .HasColumnType("decimal(18, 2)");
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("stock")
-                        .HasColumnType("int");
-
-                    b.Property<string>("urlImagen")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("IdArticulo");
+                    b.HasKey("Id");
 
                     b.HasIndex("CategoriaId");
 

@@ -1,130 +1,32 @@
-﻿@model PasajesApp.Areas.Admin.ViewModels.ArticuloMV
-
+﻿@model pasajeApp.Modelo.ViewModel.ArticuloVM
 @{
     ViewData["Title"] = "Crear Artículo";
 }
 
-<br />
-<br />
-<h3 class="text-center">Crear un nuevo Artículo</h3>
-<form method="POST" asp-action="Create" enctype="multipart/form-data">
-    <div class="row px-2 offset-1 border">
-        <div asp-validation-summary="All" class="text-danger"></div>
+<h2>Crear Artículo</h2>
 
-        <div class="col-10 offset-1 mt-4">
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="Articulo.Nombre"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="Articulo.Nombre" class="form-control" placeholder="Ingresa el nombre" />
-                    <span asp-validation-for="Articulo.Nombre" class="text-danger"></span>
-                </div>
-            </div>
-
-            <br />
-
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="Articulo.Descripcion"></label>
-                </div>
-                <div class="col-8">
-                    <textarea asp-for="Articulo.Descripcion" class="form-control" style="height: 100px;"></textarea>
-                    <span asp-validation-for="Articulo.Descripcion" class="text-danger"></span>
-                </div>
-            </div>
-
-            <br />
-
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="Articulo.CategoriaId">Categoría</label>
-                </div>
-                <div class="col-8">
-                    @Html.DropDownListFor(m => m.Articulo.CategoriaId, Model.ListaCategorias, "-Seleccionar categoría-", new { @class = "form-control" })
-                    <span asp-validation-for="Articulo.CategoriaId" class="text-danger"></span>
-                </div>
-            </div>
-
-            <br />
-
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="Articulo.urlImagen">Imagen</label>
-                </div>
-                <div class="col-8">
-                    <input type="file" name="archivos" id="subidaArchivo" class="form-control" />
-                    <span asp-validation-for="Articulo.urlImagen" class="text-danger"></span>
-                </div>
-            </div>
-
-            <br />
-
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="Articulo.habilitada">Habilitada</label>
-                </div>
-                <div class="col-8">
-                    <select asp-for="Articulo.habilitada" class="form-control">
-                        <option value="">-Seleccionar estado-</option>
-                        <option value="1">Sí</option>
-                        <option value="0">No</option>
-                    </select>
-                    <span asp-validation-for="Articulo.habilitada" class="text-danger"></span>
-                </div>
-            </div>
-
-            <br />
-
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="Articulo.stock">Stock</label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="Articulo.stock" type="number" class="form-control" placeholder="Ingresa el stock" />
-                    <span asp-validation-for="Articulo.stock" class="text-danger"></span>
-                </div>
-            </div>
-
-            <br />
-
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="Articulo.precio">Precio</label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="Articulo.precio" type="number" step="0.01" class="form-control" placeholder="Ingresa el precio" />
-                    <span asp-validation-for="Articulo.precio" class="text-danger"></span>
-                </div>
-            </div>
-
-            <br />
-
-            <div class="row">
-                <div class="col">
-                    <button type="submit" class="btn btn-primary form-control">Crear Articulo</button>
-                </div>
-                &nbsp;
-                <div class="col">
-                    <a asp-action="Index" class="btn btn-success form-control">Volver atrás</a>
-                </div>
-            </div>
-        </div>
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Articulo.Nombre"></label>
+        <input asp-for="Articulo.Nombre" class="form-control" />
+        <span asp-validation-for="Articulo.Nombre" class="text-danger"></span>
     </div>
+    <div class="form-group">
+        <label asp-for="Articulo.habilitada"></label>
+        <input asp-for="Articulo.habilitada" class="form-control" />
+        <span asp-validation-for="Articulo.habilitada" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Articulo.CategoriaId"></label>
+        @Html.DropDownListFor(m => m.Articulo.CategoriaId, Model.ListaCategorias, "Seleccione una categoría", new { @class = "form-control" })
+        <span asp-validation-for="Articulo.CategoriaId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Articulo.precio"></label>
+        <input asp-for="Articulo.precio" class="form-control" />
+        <span asp-validation-for="Articulo.precio" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear</button>
 </form>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.3/tinymce.min.js"
-            integrity="sha512-VCEWnpOl7PIhbYMcb64pqGZYez41C2uws/M/mDdGPy+vtEJHd9BqbShE4/VNnnZdr7YCPOjd+CBmYca/7WWWCw=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script>
-        tinymce.init({
-            selector: 'textarea',
-            plugins: 'lists',
-            menubar: 'file edit format'
-        });
-    </script>
-}

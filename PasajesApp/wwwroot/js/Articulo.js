@@ -3,28 +3,29 @@
 $(document).ready(function () {
     cargarDatatable();
 });
+//este es para destruir la tabla
+
+if ($.fn.DataTable.isDataTable('#tblArticulos')) {
+    $('#tblArticulos').DataTable().destroy();
+}
 
 function cargarDatatable() {
     dataTable = $("#tblArticulos").DataTable({
+        destroy: true, //pare verifciar q este destruida
         "ajax": {
-            "url": "/admin/articulo/GetAll",
+            "url": "/admin/Articulo/GetAll",
             "type": "GET",
             "datatype": "json"
         },
         "columns": [
-            { "data": "IdArticulo", "width": "5%" },
-            { "data": "nombre", "width": "30%" },
-            { "data": "precio", "width": "15%" },
-            { "data": "stock", "width": "10%" },
+            { "data": "id", "width": "5%" },
+            { "data": "nombre", "width": "25%" },
+            { "data": "categoria.nombre", "width": "30%" },
+            { "data": "precio", "width": "20%" },
+            { "data": "habilitada", "width": "20%" },
+
             {
-                "data": "habilitado",
-                "width": "10%",
-                "render": function (data) {
-                    return data ? "Sí" : "No";
-                }
-            },
-            {
-                "data": "IdArticulo",
+                "data": "id",
                 "render": function (data) {
                     return `<div class="text-center"> 
                                 <a href="/Admin/Articulo/Edit/${data}" class="btn btn-success text-white" style="cursor:pointer; width:140px;">
@@ -36,14 +37,14 @@ function cargarDatatable() {
                                 </a>
                           </div>
                          `;
-                }, "width": "30%"
+                }, "width": "40%"
             }
         ],
         "language": {
             "decimal": "",
             "emptyTable": "No hay registros",
             "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-            "infoEmpty": "Mostrando 0 a 0 de 0 Entradas",
+            "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
             "infoFiltered": "(Filtrado de _MAX_ total entradas)",
             "infoPostFix": "",
             "thousands": ",",
@@ -54,7 +55,7 @@ function cargarDatatable() {
             "zeroRecords": "Sin resultados encontrados",
             "paginate": {
                 "first": "Primero",
-                "last": "Último",
+                "last": "Ultimo",
                 "next": "Siguiente",
                 "previous": "Anterior"
             }
@@ -62,3 +63,38 @@ function cargarDatatable() {
         "width": "100%"
     });
 }
+
+function Delete(url) {
+    Swal.fire({
+        title: "¿Está seguro de borrar?",
+        text: "Este contenido no se puede recuperar!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Sí, borrar!",
+        cancelButtonText: "Cancelar",
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: 'DELETE',
+                url: url,
+                success: function (data) {
+                    if (data.success) {
+                        toastr.success(data.message);
+                        dataTable.ajax.reload();
+                    } else {
+                        toastr.error(data.message);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    toastr.error('Error al eliminar el registro.');
+                }
+            });
+        }
+    });
+}
+
+
+
+

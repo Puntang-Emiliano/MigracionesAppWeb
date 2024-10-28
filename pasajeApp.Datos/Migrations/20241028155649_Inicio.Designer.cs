@@ -9,18 +9,18 @@ using PasajesApp.Data;
 
 #nullable disable
 
-namespace PasajesApp.Data.Migrations
+namespace pasajeApp.Datos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240824005040_Articulo")]
-    partial class Articulo
+    [Migration("20241028155649_Inicio")]
+    partial class Inicio
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -229,32 +229,27 @@ namespace PasajesApp.Data.Migrations
 
             modelBuilder.Entity("pasajeApp.Modelo.Articulo", b =>
                 {
-                    b.Property<int>("IdArticulo")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdArticulo"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("CategoriaId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Descripcion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FechaCreacion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("urlImagen")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("habilitada")
+                        .HasColumnType("int");
 
-                    b.HasKey("IdArticulo");
+                    b.Property<decimal>("precio")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("CategoriaId");
 
