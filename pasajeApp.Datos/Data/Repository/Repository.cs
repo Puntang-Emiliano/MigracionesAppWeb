@@ -11,8 +11,6 @@ using System.Threading.Tasks;
 
 namespace pasajeApp.Datos.Data.Repository
 {
-
-
     public class Repository<T> : IRepository<T> where T : class
     {
         protected readonly DbContext Context;
@@ -54,13 +52,11 @@ namespace pasajeApp.Datos.Data.Repository
             }
             // Se aplica el ordenamiento si hay registros
             if (orderBy != null)
-
-
             {
-                // Se ejecuta la función de ordenamiento y se convierte la consulta en una lista
+                // Se ejecuta la función de ordenamiento y se convierte la consulta en                 una lista
                 return orderBy(query).ToList();
             }
-            // Si no se proporciona ordenamiento, simplemente se convierte la consulta en una lista
+            // Si no se proporciona ordenamiento, simplemente se convierte la consulta             en una lista
             return query.ToList();
         }
         public T GetFirstOrDefault(Expression<Func<T, bool>>? filter = null, string?
@@ -93,7 +89,6 @@ namespace pasajeApp.Datos.Data.Repository
         {
             dbSet.Remove(entity);
         }
-
     }
 
 }
