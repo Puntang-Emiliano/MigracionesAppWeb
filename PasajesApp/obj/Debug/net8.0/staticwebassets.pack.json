@@ -17,8 +17,16 @@
       "PackagePath": "staticwebassets\\js\\Articulo.js"
     },
     {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\js\\articuloCliente.js",
+      "PackagePath": "staticwebassets\\js\\articuloCliente.js"
+    },
+    {
       "Id": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\js\\categoria.js",
       "PackagePath": "staticwebassets\\js\\categoria.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\js\\categoriaCliente.js",
+      "PackagePath": "staticwebassets\\js\\categoriaCliente.js"
     },
     {
       "Id": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\js\\site.js",

@@ -3,7 +3,7 @@
     ViewData["Title"] = "Crear Artículo";
 }
 
-<h2>Crear Artículo</h2>
+<h2 class="titulo-unificado text-primary">Crear Artículo</h2>
 
 <form asp-action="Create" enctype="multipart/form-data">
     <div class="form-group">
@@ -28,5 +28,5 @@
         <span asp-validation-for="Articulo.precio" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary">Crear</button>
+    <button type="submit" class="btn-unificado">Crear</button>
 </form>

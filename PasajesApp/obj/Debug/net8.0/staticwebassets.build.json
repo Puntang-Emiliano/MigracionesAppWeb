@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iUzfjbllUntO3Xw11mqVltqMtW1EnNAD6uoCi7+WuRA=",
+  "Hash": "hjk6bo9KJBeAjko4+TCxMw4E5mpmktPMKzeuDtsfJ3Q=",
   "Source": "PasajesApp",
   "BasePath": "_content/PasajesApp",
   "Mode": "Default",
@@ -1252,6 +1252,25 @@
       "OriginalItemSpec": "wwwroot\\js\\Articulo.js"
     },
     {
+      "Identity": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\js\\articuloCliente.js",
+      "SourceId": "PasajesApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\",
+      "BasePath": "_content/PasajesApp",
+      "RelativePath": "js/articuloCliente.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\articuloCliente.js"
+    },
+    {
       "Identity": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\js\\categoria.js",
       "SourceId": "PasajesApp",
       "SourceType": "Discovered",
@@ -1269,6 +1288,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\categoria.js"
+    },
+    {
+      "Identity": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\js\\categoriaCliente.js",
+      "SourceId": "PasajesApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\",
+      "BasePath": "_content/PasajesApp",
+      "RelativePath": "js/categoriaCliente.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\categoriaCliente.js"
     },
     {
       "Identity": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\js\\site.js",

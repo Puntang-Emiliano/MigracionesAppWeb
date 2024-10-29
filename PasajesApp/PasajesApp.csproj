@@ -10,12 +10,20 @@
   <ItemGroup>
     <Compile Remove="Areas\Admin\Data\**" />
     <Compile Remove="Areas\Admin\Models\**" />
+    <Compile Remove="Areas\Cliente\Data\**" />
+    <Compile Remove="Areas\Cliente\Models\**" />
     <Content Remove="Areas\Admin\Data\**" />
     <Content Remove="Areas\Admin\Models\**" />
+    <Content Remove="Areas\Cliente\Data\**" />
+    <Content Remove="Areas\Cliente\Models\**" />
     <EmbeddedResource Remove="Areas\Admin\Data\**" />
     <EmbeddedResource Remove="Areas\Admin\Models\**" />
+    <EmbeddedResource Remove="Areas\Cliente\Data\**" />
+    <EmbeddedResource Remove="Areas\Cliente\Models\**" />
     <None Remove="Areas\Admin\Data\**" />
     <None Remove="Areas\Admin\Models\**" />
+    <None Remove="Areas\Cliente\Data\**" />
+    <None Remove="Areas\Cliente\Models\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,9 +40,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Cliente\Controllers\" />
-    <Folder Include="Areas\Cliente\Data\" />
-    <Folder Include="Areas\Cliente\Models\" />
     <Folder Include="Areas\Identity\Data\" />
   </ItemGroup>
 
