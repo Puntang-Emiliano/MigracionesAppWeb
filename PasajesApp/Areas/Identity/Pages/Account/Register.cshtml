@@ -1,4 +1,5 @@
 ﻿@page
+@using pasajeApp.Utilidades
 @model RegisterModel
 @{
     ViewData["Title"] = "Registrarse";
@@ -29,6 +30,19 @@
                     <label asp-for="Input.ConfirmPassword">Confirmar Contraseña</label>
                     <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                 </div>
+                <!-- Selector de Roles -->
+                <div class="form-group mb-3">
+                    <h4 class="text-light">Seleccionar Rol de Usuario</h4>
+                    <div class="form-check">
+                        <input type="radio" id="rolAdministrador" name="radUsuarioRole" value="@ROL.Administrador" class="form-check-input">
+                        <label for="rolAdministrador" class="form-check-label text-dark">@ROL.Administrador</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="rolRegistrado" name="radUsuarioRole" value="@ROL.Registrado" class="form-check-input" style="">
+                        <label for="rolRegistrado" class="form-check-label text-dark">@ROL.Registrado</label>
+                    </div>
+                </div>
+
                 <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary btn-unificado">Registrar</button> <!-- Clase btn-unificado -->
             </form>
         </div>

@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
+using pasajeApp.Utilidades;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -29,13 +30,15 @@ namespace PasajesApp.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<IdentityUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             IUserStore<IdentityUser> userStore,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -43,6 +46,7 @@ namespace PasajesApp.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _roleManager = roleManager;
         }
 
         /// <summary>
@@ -122,17 +126,17 @@ namespace PasajesApp.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User created a new account with password.");
 
-                    var userId = await _userManager.GetUserIdAsync(user);
-                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                    code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-                    var callbackUrl = Url.Page(
-                        "/Account/ConfirmEmail",
-                        pageHandler: null,
-                        values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
-                        protocol: Request.Scheme);
+                    //var userId = await _userManager.GetUserIdAsync(user);
+                    //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    //code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+                    //var callbackUrl = Url.Page(
+                    //    "/Account/ConfirmEmail",
+                    //    pageHandler: null,
+                    //    values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
+                    //    protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    //await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                    //    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
@@ -144,6 +148,31 @@ namespace PasajesApp.Areas.Identity.Pages.Account
                         return LocalRedirect(returnUrl);
                     }
                 }
+                if (result.Succeeded)
+                {
+                    // Validamos si los roles existen, si no, se crean
+                    if (!await _roleManager.RoleExistsAsync(ROL.Administrador))
+                        await _roleManager.CreateAsync(new IdentityRole(ROL.Administrador));
+
+                    if (!await _roleManager.RoleExistsAsync(ROL.Registrado))
+                        await _roleManager.CreateAsync(new IdentityRole(ROL.Registrado));
+
+                    if (!await _roleManager.RoleExistsAsync(ROL.Cliente))
+                        await _roleManager.CreateAsync(new IdentityRole(ROL.Cliente));
+
+                    // Obtenemos el rol seleccionado
+                    string rol = Request.Form["radUsuarioRole"].ToString();
+
+                    // Asignamos el rol al usuario según la selección
+                    if (rol == ROL.Administrador)
+                        await _userManager.AddToRoleAsync(user, ROL.Administrador);
+                    else if (rol == ROL.Registrado)
+                        await _userManager.AddToRoleAsync(user, ROL.Registrado);
+                    else if (rol == ROL.Cliente)
+                        await _userManager.AddToRoleAsync(user, ROL.Cliente);
+                }
+
+
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
@@ -178,3 +207,4 @@ namespace PasajesApp.Areas.Identity.Pages.Account
         }
     }
 }
+

@@ -21,6 +21,14 @@ namespace pasajeApp.Datos.Data.Repository
         {
             _db = db;
         }
+        public IEnumerable<SelectListItem> GetListaCategorias()
+        {
+            return _db.Categoria.Select(i => new SelectListItem()
+            {
+                Text = i.Nombre,
+                Value = i.Id.ToString()
+            });
+        }
 
 
         public void Update(Categoria categoria)
@@ -32,13 +40,6 @@ namespace pasajeApp.Datos.Data.Repository
 
         }
 
-        public IEnumerable<SelectListItem> GetListaCategorias()
-        {
-            return _db.Categoria.Select(i => new SelectListItem()
-            {
-                Text = i.Nombre,
-                Value = i.Id.ToString()
-            });
-        }
+      
     }
 }

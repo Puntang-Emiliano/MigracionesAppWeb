@@ -12,10 +12,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders() // Agrega esta línea para los tokens predeterminados
+    .AddDefaultUI();
 builder.Services.AddControllersWithViews();
-
 //Agrego linea de codigo para la inyeccion de Independencias
 builder.Services.AddScoped<IContenedorTrabajo, ContenedorTrabajo>();
 
