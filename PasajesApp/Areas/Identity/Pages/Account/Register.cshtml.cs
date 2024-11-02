@@ -142,7 +142,7 @@ namespace PasajesApp.Areas.Identity.Pages.Account
                         await _userManager.AddToRoleAsync(user, ROL.Administrador);
                     else if (rol == ROL.Registrado)
                         await _userManager.AddToRoleAsync(user, ROL.Registrado);
-                    else if (rol == ROL.Cliente)
+                    else 
                         await _userManager.AddToRoleAsync(user, ROL.Cliente);
 
                     _logger.LogInformation("User created a new account with password.");

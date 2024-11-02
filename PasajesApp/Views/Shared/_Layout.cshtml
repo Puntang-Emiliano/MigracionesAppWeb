@@ -31,22 +31,38 @@
                         <li class="nav-item">
                             <a class="nav-link btn-unificado" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidad</a>
                         </li>
-                        <div class="dropdown">
-                            <a class="btn btn-secondary dropdown-toggle btn-unificado" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Opciones
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item btn-unificado" href="#">Admin</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item btn-unificado" asp-area="admin" asp-controller="Categoria" asp-action="Index">Categoría</a></li>
-                                <li><a class="dropdown-item btn-unificado" asp-area="admin" asp-controller="Articulo" asp-action="Index">Artículo</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item btn-unificado1" href="#">Cliente</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item btn-unificado1" asp-area="cliente" asp-controller="Categoria" asp-action="Index">Categoría</a></li>
-                                <li><a class="dropdown-item btn-unificado1" asp-area="cliente" asp-controller="Articulo" asp-action="Index">Artículo</a></li>
-                            </ul>
-                        </div>
+
+                        <!-- Condicional para Administrador -->
+                        @if (User.IsInRole("Administrador"))
+                        {
+                            <div class="dropdown">
+                                <a class="btn btn-secondary dropdown-toggle btn-unificado" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Opciones
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item btn-unificado" href="#">Admin</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item btn-unificado" asp-area="admin" asp-controller="Categoria" asp-action="Index">Categoría</a></li>
+                                    <li><a class="dropdown-item btn-unificado" asp-area="admin" asp-controller="Articulo" asp-action="Index">Artículo</a></li>
+                                </ul>
+                            </div>
+                        }
+
+                        <!-- Condicional para Cliente -->
+                        @if (User.IsInRole("Cliente"))
+                        {
+                            <div class="dropdown">
+                                <a class="btn btn-secondary dropdown-toggle btn-unificado" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Opciones
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item btn-unificado1" href="#">Cliente</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item btn-unificado1" asp-area="cliente" asp-controller="Categoria" asp-action="Index">Categoría</a></li>
+                                    <li><a class="dropdown-item btn-unificado1" asp-area="cliente" asp-controller="Articulo" asp-action="Index">Artículo</a></li>
+                                </ul>
+                            </div>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

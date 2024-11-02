@@ -1,17 +1,17 @@
 ﻿var dataTable;
 
 $(document).ready(function () {
+    // Verificar si la tabla ya está inicializada y destruirla si es así
+    if ($.fn.DataTable.isDataTable('#tblArticulos')) {
+        $('#tblArticulos').DataTable().destroy();
+    }
+
     cargarDatatable();
 });
-//este es para destruir la tabla
-
-if ($.fn.DataTable.isDataTable('#tblArticulos')) {
-    $('#tblArticulos').DataTable().destroy();
-}
 
 function cargarDatatable() {
     dataTable = $("#tblArticulos").DataTable({
-        destroy: true, //pare verifciar q este destruida
+        destroy: true, // Asegura que la tabla se destruya antes de recrearla
         "ajax": {
             "url": "/admin/Articulo/GetAll",
             "type": "GET",
@@ -22,22 +22,22 @@ function cargarDatatable() {
             { "data": "nombre", "width": "25%" },
             { "data": "categoria.nombre", "width": "30%" },
             { "data": "precio", "width": "20%" },
-            { "data": "habilitada", "width": "20%" },
-
+            { "data": "habilitada", "width": "10%" },
             {
                 "data": "id",
                 "render": function (data) {
-                    return `<div class="text-center"> 
-                                <a href="/Admin/Articulo/Edit/${data}" class="btn btn-success text-white" style="cursor:pointer; width:140px;">
+                    return `
+                        <div class="d-flex justify-content-center gap-2"> 
+                            <a href="/Admin/Articulo/Edit/${data}" class="btn btn-success text-white" style="cursor:pointer; width:110px;">
                                 <i class="far fa-edit"></i> Editar
-                                </a>
-                                &nbsp;
-                                <a onclick=Delete("/Admin/Articulo/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer; width:140px;">
+                            </a>
+                            <a onclick=Delete("/Admin/Articulo/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer; width:110px;">
                                 <i class="far fa-trash-alt"></i> Borrar
-                                </a>
-                          </div>
-                         `;
-                }, "width": "40%"
+                            </a>
+                        </div>
+                    `;
+                },
+                "width": "30%"
             }
         ],
         "language": {
@@ -55,7 +55,7 @@ function cargarDatatable() {
             "zeroRecords": "Sin resultados encontrados",
             "paginate": {
                 "first": "Primero",
-                "last": "Ultimo",
+                "last": "Último",
                 "next": "Siguiente",
                 "previous": "Anterior"
             }
@@ -94,7 +94,3 @@ function Delete(url) {
         }
     });
 }
-
-
-
-
