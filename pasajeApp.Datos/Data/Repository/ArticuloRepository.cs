@@ -33,6 +33,8 @@ namespace pasajeApp.Datos.Data.Repository
                 objbaseDato.Categoria = articulo.Categoria;
                 objbaseDato.precio = articulo.precio;
                 objbaseDato.habilitada = articulo.habilitada;
+                objbaseDato.Imagen = articulo.Imagen;
+
                 _db.SaveChanges();
             }
             else

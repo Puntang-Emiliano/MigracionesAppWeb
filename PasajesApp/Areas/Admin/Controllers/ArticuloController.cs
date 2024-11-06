@@ -140,7 +140,7 @@ namespace PasajeApp.Areas.Admin.Controllers
               
                 articuloExistente.CategoriaId = viewModel.Articulo.CategoriaId;
                 articuloExistente.habilitada = viewModel.Articulo.habilitada;
-                //articuloExistente.ImageUrl = viewModel.Articulo.ImageUrl;
+                articuloExistente.Imagen = viewModel.Articulo.Imagen;
 
                 // Guarda los cambios en la base de datos
                 _contenedorTrabajo.Articulo.Update(articuloExistente);

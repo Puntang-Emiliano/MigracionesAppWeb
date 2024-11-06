@@ -17,6 +17,12 @@
         <span asp-validation-for="Articulo.habilitada" class="text-danger"></span>
     </div>
     <div class="form-group">
+        <label asp-for="Articulo.Imagen"></label>
+        <input asp-for="Articulo.Imagen" class="form-control" />
+        <span asp-validation-for="Articulo.Imagen" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
         <label asp-for="Articulo.CategoriaId"></label>
         @Html.DropDownListFor(m => m.Articulo.CategoriaId, Model.ListaCategorias, "Seleccione una categoría", new { @class = "form-control" })
         <span asp-validation-for="Articulo.CategoriaId" class="text-danger"></span>

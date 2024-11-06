@@ -17,12 +17,29 @@ function cargarDatatable() {
             "type": "GET",
             "datatype": "json"
         },
-        "columns": [
-            { "data": "id", "width": "5%" },
-            { "data": "nombre", "width": "25%" },
-            { "data": "categoria.nombre", "width": "30%" },
-            { "data": "precio", "width": "20%" },
-            { "data": "habilitada", "width": "10%" },
+        //"columns": [
+        //    { "data": "id", "width": "5%" },
+        //    { "data": "nombre", "width": "25%" },
+        //    { "data": "categoria.nombre", "width": "30%" },
+        //    { "data": "precio", "width": "20%" },
+        //    { "data": "habilitada", "width": "10%" },
+            "columns": [
+                { "data": "id", "width": "5%" },
+                { "data": "nombre", "width": "10%" },
+                { "data": "categoria.nombre", "width": "10%" }, // Mostrar el nombre de la categoría               
+                { "data": "precio", "width": "10%" },
+                { "data": "habilitada", "width": "10%" },
+                {
+                    "data": "imagen", // Cambia esto al nombre de la propiedad de la imagen en tu modelo
+                    "render": function (data) {
+                        // Verifica si hay una URL de imagen
+                        if (data) {
+                            return `<img src="${data}" alt="Imagen" style="width: 50px; height: auto;" />`;
+                        }
+                        return "Sin imagen"; // Opcional: si no hay imagen, muestra un texto
+                    },
+                    "width": "15%"
+                },
             {
                 "data": "id",
                 "render": function (data) {

@@ -28,5 +28,7 @@ namespace pasajeApp.Modelo
         [Required]
         public decimal precio { get; set; }
 
+        public string? Imagen { get; set; }
+
     }
 }
