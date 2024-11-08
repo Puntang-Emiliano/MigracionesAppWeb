@@ -137,6 +137,7 @@ namespace PasajesApp.Areas.Identity.Pages.Account
                 {
                     UserName = Input.Email,
                     Email = Input.Email,
+                    Edad = Input.Edad,
                     Name = Input.Name,
                     FechaCreacion = Input.FechaCreacion = DateTime.Now
                 };

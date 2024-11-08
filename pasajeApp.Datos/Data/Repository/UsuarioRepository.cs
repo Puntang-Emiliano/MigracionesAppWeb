@@ -26,6 +26,7 @@ namespace pasajeApp.Datos.Data.Repository
                 objBaseDato.Id = usuario.Id;
                 objBaseDato.Name = usuario.Name;
                 objBaseDato.Email = usuario.Email;
+                objBaseDato.Edad = usuario.Edad;
                 objBaseDato.UserName = usuario.UserName;
                 objBaseDato.PhoneNumber = usuario.PhoneNumber;
                 

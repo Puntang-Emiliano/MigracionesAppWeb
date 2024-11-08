@@ -54,16 +54,16 @@ namespace PasajesApp.Areas.Admin.Controllers
             return View(usuario);
         }
 
-        //[HttpGet]
-        //public IActionResult Edit(int id)
-        //{
-        //    var usuario = _contenedorTrabajo.Usuario.GetFirstOrDefault(u => u.Id == id);
-        //    if (usuario == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(usuario);
-        //}
+        [HttpGet]
+        public IActionResult Edit(string id)
+        {
+            var usuario = _contenedorTrabajo.Usuario.GetFirstOrDefault(u => u.Id == id);
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+            return View(usuario);
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -78,19 +78,19 @@ namespace PasajesApp.Areas.Admin.Controllers
             return View(usuario);
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult Delete(int id)
-        //{
-        //    var usuario = _contenedorTrabajo.Usuario.GetFirstOrDefault(u => u.Id == id);
-        //    if (usuario == null)
-        //    {
-        //        return NotFound();
-        //    }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(string id)
+        {
+            var usuario = _contenedorTrabajo.Usuario.GetFirstOrDefault(u => u.Id == id);
+            if (usuario == null)
+            {
+                return NotFound();
+            }
 
-        //    _contenedorTrabajo.Usuario.Remove(usuario);
-        //    _contenedorTrabajo.Save();
-        //    return RedirectToAction(nameof(Index));
-        //}
+            _contenedorTrabajo.Usuario.Remove(usuario);
+            _contenedorTrabajo.Save();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
