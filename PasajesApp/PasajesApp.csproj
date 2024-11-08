@@ -12,18 +12,22 @@
     <Compile Remove="Areas\Admin\Models\**" />
     <Compile Remove="Areas\Cliente\Data\**" />
     <Compile Remove="Areas\Cliente\Models\**" />
+    <Compile Remove="Areas\Identity\Data\**" />
     <Content Remove="Areas\Admin\Data\**" />
     <Content Remove="Areas\Admin\Models\**" />
     <Content Remove="Areas\Cliente\Data\**" />
     <Content Remove="Areas\Cliente\Models\**" />
+    <Content Remove="Areas\Identity\Data\**" />
     <EmbeddedResource Remove="Areas\Admin\Data\**" />
     <EmbeddedResource Remove="Areas\Admin\Models\**" />
     <EmbeddedResource Remove="Areas\Cliente\Data\**" />
     <EmbeddedResource Remove="Areas\Cliente\Models\**" />
+    <EmbeddedResource Remove="Areas\Identity\Data\**" />
     <None Remove="Areas\Admin\Data\**" />
     <None Remove="Areas\Admin\Models\**" />
     <None Remove="Areas\Cliente\Data\**" />
     <None Remove="Areas\Cliente\Models\**" />
+    <None Remove="Areas\Identity\Data\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,10 +41,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.6" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Identity\Data\" />
   </ItemGroup>
 
   <ItemGroup>

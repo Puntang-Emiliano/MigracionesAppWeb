@@ -28,6 +28,7 @@ namespace pasajeApp.Datos.Data.Repository
                 objBaseDato.Email = usuario.Email;
                 objBaseDato.UserName = usuario.UserName;
                 objBaseDato.PhoneNumber = usuario.PhoneNumber;
+                
                
 
                 // Guardamos los cambios en la base de datos

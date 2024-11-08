@@ -30,6 +30,18 @@
                     <label asp-for="Input.ConfirmPassword">Confirmar Contraseña</label>
                     <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                 </div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Name" class="form-control" placeholder="Nombre completo" />
+                    <label asp-for="Input.Name">Nombre Completo</label>
+                    <span asp-validation-for="Input.Name" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Edad" class="form-control" placeholder="Edad" />
+                    <label asp-for="Input.Edad">Edad</label>
+                    <span asp-validation-for="Input.Edad" class="text-danger"></span>
+                </div>
+            
                 <!-- Selector de Roles -->
 
                 @if (User.IsInRole(ROL.Administrador))

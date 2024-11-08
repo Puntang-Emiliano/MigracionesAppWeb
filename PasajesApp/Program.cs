@@ -12,10 +12,20 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddDefaultTokenProviders() // Agrega esta línea para los tokens predeterminados
-    .AddDefaultUI();
+//builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+//    .AddEntityFrameworkStores<ApplicationDbContext>()
+//    .AddDefaultTokenProviders() // Agrega esta línea para los tokens predeterminados
+//    .AddDefaultUI();
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = true;
+    options.Tokens.EmailConfirmationTokenProvider = TokenOptions.DefaultProvider; // Agrega el proveedor de tokens para confirmación de email
+})
+.AddEntityFrameworkStores<ApplicationDbContext>()
+.AddDefaultTokenProviders() // Agrega los proveedores de tokens predeterminados
+.AddDefaultUI();
+
 builder.Services.AddControllersWithViews();
 //Agrego linea de codigo para la inyeccion de Independencias
 builder.Services.AddScoped<IContenedorTrabajo, ContenedorTrabajo>();

@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using pasajeApp.Modelo;
 
 namespace PasajesApp.Areas.Identity.Pages.Account
 {
@@ -101,6 +102,20 @@ namespace PasajesApp.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [Required]
+            [Display(Name = "Name")]
+            public string Name { get; set; }
+
+
+            [Display(Name = "Edad")]
+            public int Edad { get; set; }
+
+
+
+            [Display(Name = "Fecha de Creación")]
+            public DateTime FechaCreacion{ get; set;}
+
         }
 
 
@@ -116,7 +131,17 @@ namespace PasajesApp.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = CreateUser();
+                //var user = CreateUser();
+
+                var user = new Usuario
+                {
+                    UserName = Input.Email,
+                    Email = Input.Email,
+                    Name = Input.Name,
+                    FechaCreacion = Input.FechaCreacion = DateTime.Now
+                };
+
+
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
