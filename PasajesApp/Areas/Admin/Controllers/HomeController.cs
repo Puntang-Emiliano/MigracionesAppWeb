@@ -1,12 +1,13 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using PasajesApp.Models;
 using System.Diagnostics;
 
-namespace PasajesApp.Controllers
+namespace PasajesApp.Areas.Admin.Controllers
 {
-    [Area("Cliente")]
+    [Area("Admin")]
     public class HomeController : Controller
     {
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)

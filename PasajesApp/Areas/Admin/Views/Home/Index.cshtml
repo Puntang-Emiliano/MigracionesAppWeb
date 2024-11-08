@@ -1,50 +1,48 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="es-ar">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Sistema de Inventarios</title>
+    <title>@ViewData["Title"] - Tienda Online</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        .full-screen-image {
+            background-image: url('@Url.Content("~/Imagenes/tiendas.jpg")');
+            background-size: cover;
+            background-position: center;
+            height: 80vh; /* Ajusta la altura según prefieras */
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index">Sistema de Inventarios</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" asp-controller="Home" asp-action="Index">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Privacy">Home</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Account" asp-action="Login">Iniciar Sesión</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Account" asp-action="Register">Registrarse</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <!-- Opcional: contenido del encabezado -->
     </header>
+
     <div class="container mt-5">
-        <h1 class="text-center">Bienvenido al Sistema de Inventarios</h1>
+        <h1 class="text-center titulo-unificado">Bienvenido a la Tienda Online</h1>
     </div>
 
-    <footer class="footer text-muted mt-5">
-        <div class="container text-center">
-            &copy; 2024 - Sistema de Inventarios
-        </div>
-    </footer>
+    <div class="full-screen-image">
+        <!-- Puedes agregar texto o elementos adicionales sobre la imagen aquí -->
+    </div>
+
+   
 
     <!-- Scripts -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

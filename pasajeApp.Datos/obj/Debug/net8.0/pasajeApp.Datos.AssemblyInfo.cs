@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("pasajeApp.Datos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0899c0f851c3dc31c993ad002342163251df2fbf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5acf60944f31fe075fb50d0b69a4252873450d54")]
 [assembly: System.Reflection.AssemblyProductAttribute("pasajeApp.Datos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("pasajeApp.Datos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

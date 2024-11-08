@@ -5,6 +5,26 @@
       "PackagePath": "staticwebassets\\PasajesApp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\Imagenes\\CocaCola.jpg",
+      "PackagePath": "staticwebassets\\Imagenes\\CocaCola.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\Imagenes\\Fanta.jpg",
+      "PackagePath": "staticwebassets\\Imagenes\\Fanta.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\Imagenes\\LaisC.jpg",
+      "PackagePath": "staticwebassets\\Imagenes\\LaisC.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\Imagenes\\Pepsi.jpg",
+      "PackagePath": "staticwebassets\\Imagenes\\Pepsi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\Imagenes\\tiendas.jpg",
+      "PackagePath": "staticwebassets\\Imagenes\\tiendas.jpg"
+    },
+    {
       "Id": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -15,6 +35,14 @@
     {
       "Id": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\js\\Articulo.js",
       "PackagePath": "staticwebassets\\js\\Articulo.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\js\\Details.js",
+      "PackagePath": "staticwebassets\\js\\Details.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\js\\JavaScript.js",
+      "PackagePath": "staticwebassets\\js\\JavaScript.js"
     },
     {
       "Id": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\js\\articuloCliente.js",

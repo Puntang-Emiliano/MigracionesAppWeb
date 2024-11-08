@@ -12,6 +12,8 @@ namespace pasajeApp.Datos.Data.Repository.IRepository
         ICategoriaRepository Categoria {  get; }
 
         IArticuloRepository Articulo {get;}
+
+        IUsuarioRepository Usuario { get; }
         void Save();
 
     }

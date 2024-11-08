@@ -15,5 +15,6 @@ namespace PasajesApp.Data
 
         public DbSet<Categoria> Categoria {get ;set;}
         public DbSet<Articulo> Articulo { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }

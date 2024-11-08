@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using pasajeApp.Datos.Data.Repository.IRepository;
 
+
 namespace PasajesApp.Areas.Cliente.Controllers
 {
     [Area("Cliente")]
@@ -27,6 +28,20 @@ namespace PasajesApp.Areas.Cliente.Controllers
             return Json(new { data = allObj });
         }
 
+
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            var articulo = _contenedorTrabajo.Articulo.GetFirstOrDefault(a => a.Id == id, includeProperties: "Categoria");
+
+            if (articulo == null)
+            {
+                return NotFound();
+            }
+
+           
+            return Json(articulo);
+        }
         #endregion
     }
 }
