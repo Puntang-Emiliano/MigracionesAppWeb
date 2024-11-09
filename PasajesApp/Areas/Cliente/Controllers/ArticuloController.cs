@@ -30,17 +30,14 @@ namespace PasajesApp.Areas.Cliente.Controllers
 
 
         [HttpGet]
-        public IActionResult Details(int id)
+        public IActionResult DetalleArt(int id)
         {
             var articulo = _contenedorTrabajo.Articulo.GetFirstOrDefault(a => a.Id == id, includeProperties: "Categoria");
-
             if (articulo == null)
             {
                 return NotFound();
             }
-
-           
-            return Json(articulo);
+            return View(articulo);
         }
         #endregion
     }

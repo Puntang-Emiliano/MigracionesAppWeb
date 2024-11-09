@@ -74,8 +74,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Web2/MigracionesAppWeb/PasajesApp/Areas/Cliente/Views/Articulo/DetalleArticulo.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xBcnRpY3Vsb1xEZXRhbGxlQXJ0aWN1bG8uY3NodG1s
+[C:/Users/Usuario/Desktop/Web2/MigracionesAppWeb/PasajesApp/Areas/Cliente/Views/Articulo/DetalleArt.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xBcnRpY3Vsb1xEZXRhbGxlQXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Usuario/Desktop/Web2/MigracionesAppWeb/PasajesApp/Areas/Cliente/Views/Articulo/Index.cshtml]

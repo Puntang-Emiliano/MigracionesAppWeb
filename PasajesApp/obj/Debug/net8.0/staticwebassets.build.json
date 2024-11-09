@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5FpXtFGSHLUgz69RMQJYX/+aTY/65pnO8oM/tmyqoF0=",
+  "Hash": "flFMJvN82MUrZRXC5BjXJyTAzDlSh1eDK7IblZK8kFE=",
   "Source": "PasajesApp",
   "BasePath": "_content/PasajesApp",
   "Mode": "Default",
@@ -1402,25 +1402,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\categoriaCliente.js"
-    },
-    {
-      "Identity": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\js\\Details.js",
-      "SourceId": "PasajesApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\",
-      "BasePath": "_content/PasajesApp",
-      "RelativePath": "js/Details.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\Details.js"
     },
     {
       "Identity": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\PasajesApp\\wwwroot\\js\\JavaScript.js",

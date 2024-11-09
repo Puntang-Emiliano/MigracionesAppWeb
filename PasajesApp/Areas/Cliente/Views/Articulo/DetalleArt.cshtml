@@ -1,0 +1,71 @@
+﻿@model pasajeApp.Modelo.Articulo
+
+@{
+    ViewData["Title"] = "Detalle del Artículo";
+}
+
+<h1>Detalle del Artículo</h1>
+
+<div class="card mb-4" style="max-width: 600px; margin: 0 auto;">
+    <div class="card-body">
+        <!-- Imagen del artículo -->
+        <div class="text-center mb-4">
+            <img src="@Model.Imagen" alt="Imagen del artículo" class="img-fluid" style="max-height: 300px; object-fit: contain;">
+        </div>
+
+        <!-- Detalles del artículo en tabla -->
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th style="width: 30%;">@Html.DisplayNameFor(model => model.Nombre)</th>
+                    <td>@Html.DisplayFor(model => model.Nombre)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Categoria)</th>
+                    <td>@Html.DisplayFor(model => model.Categoria.Nombre)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.habilitada)</th>
+                    <td>@Html.DisplayFor(model => model.habilitada)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.precio)</th>
+                    <td>$@Html.DisplayFor(model => model.precio)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Control de cantidad y botón de agregar al carrito -->
+        <div class="d-flex align-items-center justify-content-center mt-4">
+            <button type="button" class="btn btn-outline-secondary" id="decreaseQuantity">-</button>
+            <input type="text" id="quantityInput" class="form-control text-center mx-2" value="1" style="width: 60px;" readonly>
+            <button type="button" class="btn btn-outline-secondary" id="increaseQuantity">+</button>
+        </div>
+
+        <div class="mt-4 text-center">
+            <button type="button" class="btn btn-primary" id="addToCart">Agregar al Carrito</button>
+            <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript para manejar el control de cantidad
+    document.getElementById("increaseQuantity").addEventListener("click", function () {
+        var quantityInput = document.getElementById("quantityInput");
+        quantityInput.value = parseInt(quantityInput.value) + 1;
+    });
+
+    document.getElementById("decreaseQuantity").addEventListener("click", function () {
+        var quantityInput = document.getElementById("quantityInput");
+        if (parseInt(quantityInput.value) > 1) {
+            quantityInput.value = parseInt(quantityInput.value) - 1;
+        }
+    });
+
+    document.getElementById("addToCart").addEventListener("click", function () {
+        var quantity = document.getElementById("quantityInput").value;
+        alert("Producto agregado al carrito con cantidad: " + quantity);
+        // Aquí puedes añadir la lógica para agregar el artículo al carrito
+    });
+</script>
