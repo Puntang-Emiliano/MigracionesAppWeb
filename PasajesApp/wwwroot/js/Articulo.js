@@ -17,29 +17,26 @@ function cargarDatatable() {
             "type": "GET",
             "datatype": "json"
         },
-        //"columns": [
-        //    { "data": "id", "width": "5%" },
-        //    { "data": "nombre", "width": "25%" },
-        //    { "data": "categoria.nombre", "width": "30%" },
-        //    { "data": "precio", "width": "20%" },
-        //    { "data": "habilitada", "width": "10%" },
-            "columns": [
-                { "data": "id", "width": "5%" },
-                { "data": "nombre", "width": "10%" },
-                { "data": "categoria.nombre", "width": "10%" }, // Mostrar el nombre de la categoría               
-                { "data": "precio", "width": "10%" },
-                { "data": "habilitada", "width": "10%" },
-                {
-                    "data": "imagen", // Cambia esto al nombre de la propiedad de la imagen en tu modelo
-                    "render": function (data) {
-                        // Verifica si hay una URL de imagen
-                        if (data) {
-                            return `<img src="${data}" alt="Imagen" style="width: 50px; height: auto;" />`;
-                        }
-                        return "Sin imagen"; // Opcional: si no hay imagen, muestra un texto
-                    },
-                    "width": "15%"
+        "columns": [
+            { "data": "id", "width": "5%" },
+            { "data": "nombre", "width": "10%" },
+            { "data": "categoria.nombre", "width": "10%" }, // Mostrar el nombre de la categoría
+            { "data": "precio", "width": "10%" },
+            { "data": "habilitada", "width": "10%" },
+            {
+                "data": "imagen", // Cambia esto al nombre de la propiedad de la imagen en tu modelo
+                "render": function (data) {
+                    // Verifica si hay una URL de imagen
+                    if (data) {
+                        // Añadimos un contenedor con un tamaño fijo de 50x50px para las imágenes
+                        return `<div style="width: 50px; height: 50px; overflow: hidden;">
+                                    <img src="${data}" alt="Imagen" style="width: 100%; height: 100%; object-fit: cover;" />
+                                </div>`;
+                    }
+                    return "Sin imagen"; // Si no hay imagen, mostramos "Sin imagen"
                 },
+                "width": "15%"
+            },
             {
                 "data": "id",
                 "render": function (data) {
@@ -61,10 +58,8 @@ function cargarDatatable() {
             "decimal": "",
             "emptyTable": "No hay registros",
             "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-            "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+            "infoEmpty": "Mostrando 0 a 0 de 0 Entradas",
             "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-            "infoPostFix": "",
-            "thousands": ",",
             "lengthMenu": "Mostrar _MENU_ Entradas",
             "loadingRecords": "Cargando...",
             "processing": "Procesando...",

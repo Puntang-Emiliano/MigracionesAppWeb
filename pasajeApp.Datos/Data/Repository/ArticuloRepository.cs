@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace pasajeApp.Datos.Data.Repository
 {
-    internal class ArticuloRepository : Repository<Articulo>, IArticuloRepository
+    public class ArticuloRepository : Repository<Articulo>, IArticuloRepository
     {
 
         private readonly ApplicationDbContext _db;

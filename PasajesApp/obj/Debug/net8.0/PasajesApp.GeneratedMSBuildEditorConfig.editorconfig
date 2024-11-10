@@ -74,12 +74,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Usuario/Desktop/Web2/MigracionesAppWeb/PasajesApp/Areas/Cliente/Views/Articulo/Carrito.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xBcnRpY3Vsb1xDYXJyaXRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Usuario/Desktop/Web2/MigracionesAppWeb/PasajesApp/Areas/Cliente/Views/Articulo/DetalleArt.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xBcnRpY3Vsb1xEZXRhbGxlQXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Usuario/Desktop/Web2/MigracionesAppWeb/PasajesApp/Areas/Cliente/Views/Articulo/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xBcnRpY3Vsb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/Desktop/Web2/MigracionesAppWeb/PasajesApp/Areas/Cliente/Views/Articulo/VerCarrito.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xBcnRpY3Vsb1xWZXJDYXJyaXRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Usuario/Desktop/Web2/MigracionesAppWeb/PasajesApp/Areas/Cliente/Views/Categoria/Index.cshtml]

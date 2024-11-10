@@ -1,0 +1,25 @@
+﻿@model IEnumerable<pasajeApp.Modelo.CarritoItem>
+
+<h1>Carrito</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Artículo</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Articulo.Nombre</td>
+                <td>@item.Cantidad</td>
+                <td>$@item.Subtotal</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Total: $@Model.Sum(item => item.Subtotal)</h3>

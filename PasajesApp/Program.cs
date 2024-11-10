@@ -29,6 +29,10 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 builder.Services.AddControllersWithViews();
 //Agrego linea de codigo para la inyeccion de Independencias
 builder.Services.AddScoped<IContenedorTrabajo, ContenedorTrabajo>();
+builder.Services.AddScoped<ICarritoRepository, CarritoRepository>();            //ver esto  
+builder.Services.AddScoped<ICarritoItemRepository, CarritoItemRepository>();    //ver esto
+builder.Services.AddScoped<IArticuloRepository, ArticuloRepository>();          //ver esto
+
 
 
 var app = builder.Build();
@@ -47,6 +51,8 @@ else
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+//app.UseSession();
 
 app.UseRouting();
 

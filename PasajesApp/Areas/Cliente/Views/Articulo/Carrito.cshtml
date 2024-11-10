@@ -1,0 +1,49 @@
+﻿@model List<pasajeApp.Modelo.CarritoItem> 
+
+@{
+    ViewData["Title"] = "Carrito de Compras";
+}
+
+<h1>Carrito de Compras</h1>
+
+@if (Model.Count == 0)
+{
+    <div class="alert alert-info">
+        No hay artículos en el carrito.
+    </div>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Artículo</th>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Total</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><img src="@item.Articulo.Imagen" alt="Imagen" class="img-thumbnail" style="width: 50px; height: auto;"></td>
+                    <td>@item.Articulo.Nombre</td>
+                    <td>@item.Cantidad</td>
+                    <td>$@item.Articulo.precio</td>
+                    <td>$@(item.Cantidad * item.Articulo.precio)</td>
+                    <td>
+                        <a href="@Url.Action("EliminarDelCarrito", new { id = item.Id })" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-between">
+        <a href="@Url.Action("Index", "Articulo")" class="btn btn-secondary">Seguir Comprando</a>
+        <a href="@Url.Action("FinalizarCompra", "Carrito")" class="btn btn-primary">Finalizar Compra</a>
+    </div>
+}
