@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using pasajeApp.Datos.Data.Repository.IRepository;
 using pasajeApp.Modelo;
 using System.Security.Claims;
@@ -15,25 +16,24 @@ namespace PasajesApp.Areas.Admin.Controllers
             _contenedorTrabajo = contenedorTrabajo;
         }
 
+
+       
+
         [HttpGet]
         public IActionResult Index()
         {
             // Obtiene la identidad del usuario actual
             var claimsIdentity = (ClaimsIdentity)this.User.Identity;
             var usuarioActual = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
-
-            // Si no hay un usuario actual, redirige o muestra un error
             if (usuarioActual == null)
             {
-                return RedirectToAction("Login", "Account"); // Redirige al login o muestra mensaje
+                return RedirectToAction("Login", "Account"); 
             }
-
-            // Obtiene todos los usuarios excepto el usuario actual
             var usuarios = _contenedorTrabajo.Usuario.GetAll(u => u.Id != usuarioActual.Value);
-
-            // Retorna la vista con la lista de usuarios
             return View(usuarios);
         }
+
+        // Crear Usuario
 
         [HttpGet]
         public IActionResult Create()
@@ -53,6 +53,9 @@ namespace PasajesApp.Areas.Admin.Controllers
             }
             return View(usuario);
         }
+
+
+        //Editar Usuario
 
         [HttpGet]
         public IActionResult Edit(string id)
@@ -80,17 +83,30 @@ namespace PasajesApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Delete(string id)
-        {
+        public IActionResult ToggleActivo(string id)        {
+          
             var usuario = _contenedorTrabajo.Usuario.GetFirstOrDefault(u => u.Id == id);
             if (usuario == null)
             {
                 return NotFound();
             }
+            
+            if (usuario.LockoutEnd == null || usuario.LockoutEnd <= DateTime.Now)
+            {
+                usuario.LockoutEnd = DateTime.Now.AddYears(100); // Establecer un valor futuro para deshabilitar al usuario (puedes ajustar los años)
+            }
+            else
+            {
+                usuario.LockoutEnd = null; // Habilitar al usuario (establece LockoutEnd como null)
+            }
 
-            _contenedorTrabajo.Usuario.Remove(usuario);
+            // Guardar cambios
+            _contenedorTrabajo.Usuario.Update(usuario);
             _contenedorTrabajo.Save();
+
             return RedirectToAction(nameof(Index));
         }
+
+
     }
 }
