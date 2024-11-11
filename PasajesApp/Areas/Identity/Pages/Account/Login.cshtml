@@ -49,3 +49,9 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
+@if (TempData["Warning"] != null)
+{
+    <div class="alert alert-warning">
+        @TempData["Warning"]
+    </div>
+}

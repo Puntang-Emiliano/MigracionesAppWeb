@@ -126,6 +126,13 @@
             </div>
         </nav>
     </header>
+    @if (TempData["Warning"] != null)
+    {
+        <div class="alert alert-warning">
+            @TempData["Warning"]
+        </div>
+    }
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
