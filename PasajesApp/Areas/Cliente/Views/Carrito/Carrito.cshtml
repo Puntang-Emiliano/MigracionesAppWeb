@@ -1,0 +1,29 @@
+﻿@model List<pasajeApp.Modelo.Articulo>
+
+<h1>Carrito de Compras</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><img src="@item.Imagen" alt="Imagen de producto" style="max-height: 50px; object-fit: contain;"></td>
+                <td>@item.Nombre</td>
+                <td>@item.Categoria.Nombre</td>
+                <td>$@item.precio</td>
+                <td>1</td> <!-- Aquí puedes agregar lógica para manejar cantidades si es necesario -->
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Volver a la tienda</a>

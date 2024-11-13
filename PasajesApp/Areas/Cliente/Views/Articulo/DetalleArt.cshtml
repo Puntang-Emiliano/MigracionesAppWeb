@@ -63,23 +63,15 @@
         }
     });
 
-  document.getElementById("addToCart").addEventListener("click", function () {
-    var cantidad = document.getElementById("quantityInput").value;
-    var articuloId = @Model.Id;  
+    document.getElementById("addToCart").addEventListener("click", function () {
+        var cantidad = document.getElementById("quantityInput").value;
+        var articuloId = @Model.Id;
 
-    // Llamada AJAX para agregar al carrito
-    $.ajax({
-        url: '@Url.Action("AgregarAlCarrito", "Carrito")',
-        type: 'POST',
-        data: { articuloId: articuloId, cantidad: cantidad },
-        success: function(response) {
-            alert("Producto agregado al carrito con cantidad: " + cantidad);
-            window.location.href = '@Url.Action("VerCarrito", "Carrito")';  // Redirigir al carrito
-        },
-        error: function(xhr, status, error) {
-            alert("Error al agregar al carrito: " + xhr.responseText);
+        if (isNaN(cantidad) || cantidad <= 0) {
+            alert("Por favor ingrese una cantidad válida.");
+            return;
         }
-    });
-});
 
+        window.location.href = '@Url.Action("Carrito", "Carrito", new { area = "Cliente" })';
+    });
 </script>

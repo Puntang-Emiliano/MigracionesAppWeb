@@ -76,7 +76,7 @@ namespace PasajeApp.Areas.Admin.Controllers
             if (!User.Identity.IsAuthenticated)
             {
                 TempData["Warning"] = "No tiene los permisos necesarios. Por favor, inicie sesión.";
-                return Redirect("http://localhost:5190/Identity/Account/Login"); // Redirige al login si no está autenticado
+                return Redirect("http://localhost:5190/Identity/Account/Login"); 
             }
 
             var articulo = _contenedorTrabajo.Articulo.Get(id);
@@ -85,7 +85,7 @@ namespace PasajeApp.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            // Si el usuario tiene rol de Administrador o Registrado, permite editar
+            /// Si el usuario tiene rol de Administrador o Registrado, permite editar
             if (User.IsInRole(ROL.Administrador) || User.IsInRole(ROL.Registrado))
             {
                 var viewModel = new ArticuloVM
@@ -156,7 +156,7 @@ namespace PasajeApp.Areas.Admin.Controllers
             if (!User.Identity.IsAuthenticated || !User.IsInRole(ROL.Administrador))
             {
                 TempData["Warning"] = "No tiene los permisos necesarios. Por favor, inicie sesión.";
-                return Redirect("http://localhost:5190/Identity/Account/Login"); // Redirige si no tiene permisos
+                return Redirect("http://localhost:5190/Identity/Account/Login"); 
             }
 
             var articulo = _contenedorTrabajo.Articulo.Get(id);

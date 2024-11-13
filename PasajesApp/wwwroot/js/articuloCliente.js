@@ -8,7 +8,7 @@ function cargarArticulos() {
         type: "GET",
         datatype: "json",
         success: function (data) {
-            // Llamar función que genera las cards
+           
             generarCards(data.data);
         },
         error: function () {
@@ -18,11 +18,11 @@ function cargarArticulos() {
 }
 
 function generarCards(articulos) {
-    // Limpiamos el contenedor de cards
+    
     var cardsContainer = $("#cardsContainer");
     cardsContainer.empty();
 
-    // Recorremos los artículos y generamos una card para cada uno
+   
     $.each(articulos, function (index, articulo) {
         var habilitada = articulo.habilitada ? "Sí" : "No";
 
@@ -49,7 +49,7 @@ function generarCards(articulos) {
             </div>
         `;
 
-        // Añadimos la card al contenedor
+        
         cardsContainer.append(cardHtml);
     });
 }
