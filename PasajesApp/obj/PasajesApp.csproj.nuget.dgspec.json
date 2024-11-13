@@ -78,6 +78,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )"
+            },
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2024.10.3, )"
             }
           },
           "imports": [
@@ -153,6 +157,10 @@
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
               "version": "[8.0.10, )"
+            },
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2024.10.3, )"
             }
           },
           "imports": [
@@ -220,6 +228,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2024.10.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -319,6 +333,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2024.10.3, )"
             }
           },
           "imports": [

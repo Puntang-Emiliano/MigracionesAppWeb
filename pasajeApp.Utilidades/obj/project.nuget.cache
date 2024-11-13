@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zYloegMu4Yk=",
+  "dgSpecHash": "OQdmtPM2mRE=",
   "success": true,
   "projectFilePath": "C:\\Users\\Usuario\\Desktop\\Web2\\MigracionesAppWeb\\pasajeApp.Utilidades\\pasajeApp.Utilidades.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Usuario\\.nuget\\packages\\questpdf\\2024.10.3\\questpdf.2024.10.3.nupkg.sha512"
+  ],
   "logs": []
 }

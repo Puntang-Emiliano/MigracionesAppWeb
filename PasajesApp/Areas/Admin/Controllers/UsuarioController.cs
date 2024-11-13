@@ -116,6 +116,7 @@ using Microsoft.AspNetCore.Mvc;
 using pasajeApp.Datos.Data.Repository.IRepository;
 using pasajeApp.Modelo;
 using System.Security.Claims;
+using System.Text;
 
 namespace PasajesApp.Areas.Admin.Controllers
 {
@@ -257,6 +258,33 @@ namespace PasajesApp.Areas.Admin.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+
+        
+        // Generar reporte en PDF
+        [HttpGet]
+        public IActionResult Reporte()
+        {
+            if (!EsAdministrador())
+            {
+                TempData["Warning"] = "No tiene los permisos necesarios. Por favor, inicie sesión.";
+                return Redirect("http://localhost:5190/Identity/Account/Login");
+            }
+
+            var usuarios = _contenedorTrabajo.Usuario.GetAll(); // Obtener todos los usuarios
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("ID,Nombre,Edad,Email,Fecha de Creación,Estado");
+
+            foreach (var usuario in usuarios)
+            {
+                var estado = usuario.LockoutEnd.HasValue && usuario.LockoutEnd > DateTime.Now ? "Deshabilitado" : "Habilitado";
+                sb.AppendLine($"{usuario.Id},{usuario.Name},{usuario.Edad},{usuario.Email},{usuario.FechaCreacion:dd/MM/yyyy},{estado}");
+            }
+
+            byte[] archivoBytes = Encoding.UTF8.GetBytes(sb.ToString());
+            return File(archivoBytes, "application/octet-stream", "ReporteUsuarios.csv");
+        }
     }
 }
-
+    

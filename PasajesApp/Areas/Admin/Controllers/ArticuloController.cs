@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using pasajeApp.Modelo;
 using pasajeApp.Modelo.ViewModel;
 using pasajeApp.Utilidades;
+using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
+using QuestPDF.Fluent;
 
 namespace PasajeApp.Areas.Admin.Controllers
 {
@@ -181,7 +184,98 @@ namespace PasajeApp.Areas.Admin.Controllers
             return Json(new { data = articulos });
         }
         #endregion
+
+
+
+
+        /// Para generar PDF
+
+        [HttpGet]
+        public IActionResult GenerarReporte()
+        {
+            QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
+
+            var articulos = _contenedorTrabajo.Articulo.GetAll(includeProperties: "Categoria");
+
+            // Define el método CellStyle dentro de GenerarReporte
+            static IContainer CellStyle(IContainer container)
+            {
+                return container.BorderBottom(1).BorderColor(Colors.Grey.Lighten2).PaddingVertical(5);
+            }
+
+            // Crea el documento PDF
+            var pdfDocument = Document.Create(container =>
+            {
+                container.Page(page =>
+                {
+                    page.Size(PageSizes.A4);
+                    page.Margin(2, Unit.Centimetre);
+                    page.PageColor(Colors.White);
+                    page.DefaultTextStyle(x => x.FontSize(12));
+
+                    page.Header()
+                        .Text("Lista de Artículos")
+                        .SemiBold().FontSize(20).FontColor(Colors.Blue.Darken2);
+
+                    page.Content()
+                        .Table(table =>
+                        {
+                            // Definir el número de columnas
+                            table.ColumnsDefinition(columns =>
+                            {
+                                columns.ConstantColumn(50); // Id
+                                columns.RelativeColumn(); // Nombre
+                                columns.RelativeColumn(); // Categoria
+                                columns.ConstantColumn(60); // Precio
+                                columns.ConstantColumn(60); // Habilitada
+                            });
+
+                            // Agregar encabezado de la tabla
+                            table.Header(header =>
+                            {
+                                header.Cell().Element(CellStyle).Text("Id");
+                                header.Cell().Element(CellStyle).Text("Nombre");
+                                header.Cell().Element(CellStyle).Text("Categoría");
+                                header.Cell().Element(CellStyle).Text("Precio");
+                                header.Cell().Element(CellStyle).Text("Habilitada");
+                            });
+
+                            // Agregar filas de la tabla
+                            foreach (var articulo in articulos)
+                            {
+                                table.Cell().Element(CellStyle).Text(articulo.Id.ToString());
+                                table.Cell().Element(CellStyle).Text(articulo.Nombre);
+                                table.Cell().Element(CellStyle).Text(articulo.Categoria.Nombre);
+                                table.Cell().Element(CellStyle).Text($"${articulo.precio}");
+                                table.Cell().Element(CellStyle).Text(articulo.habilitada == 1 ? "Sí" : "No");
+                            }
+                        });
+
+                    page.Footer()
+                        .AlignCenter()
+                        .Text(x => x.CurrentPageNumber());
+                });
+            });
+
+            // Convierte el documento a bytes
+            var pdfBytes = pdfDocument.GeneratePdf();
+
+            // Devuelve el archivo PDF como respuesta
+            return File(pdfBytes, "application/pdf", "Reporte_Articulos.pdf");
+        }
+
+
+
+
     }
+
+
+
 }
+
+
+
+
+
 
 

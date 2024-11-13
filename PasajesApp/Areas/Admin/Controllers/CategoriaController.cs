@@ -241,6 +241,12 @@ using pasajeApp.Datos.Data.Repository.IRepository;
 using Microsoft.AspNetCore.Mvc;
 using pasajeApp.Modelo;
 using pasajeApp.Utilidades;
+using pasajeApp.Datos.Data.Repository;
+using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
+using QuestPDF.Fluent;
+using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
 
 namespace pasajeApp.Areas.Admin.Controllers
 {
@@ -381,6 +387,72 @@ namespace pasajeApp.Areas.Admin.Controllers
             return Json(new { success = true, Message = "Categoría Borrada Correctamente" });
         }
         #endregion
+
+        // genera reporte 
+        [HttpGet]
+        public IActionResult GenerarReporte()
+        {
+            QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
+
+            var categorias = _contenedorTrabajo.Categoria.GetAll();
+
+            static IContainer CellStyle(IContainer container)
+            {
+                return container.BorderBottom(1).BorderColor(Colors.Grey.Lighten2).PaddingVertical(5);
+            }
+
+            var pdfDocument = Document.Create(container =>
+            {
+                container.Page(page =>
+                {
+                    page.Size(PageSizes.A4);
+                    page.Margin(2, Unit.Centimetre);
+                    page.PageColor(Colors.White);
+                    page.DefaultTextStyle(x => x.FontSize(12));
+
+                    page.Header()
+                        .Text("Lista de Categorías")
+                        .SemiBold().FontSize(20).FontColor(Colors.Blue.Darken2);
+
+                    page.Content()
+                        .Table(table =>
+                        {
+                            table.ColumnsDefinition(columns =>
+                            {
+                                columns.ConstantColumn(50); // Id
+                                columns.RelativeColumn(); // Nombre
+                                columns.ConstantColumn(60); // Habilitada
+                            });
+
+                            table.Header(header =>
+                            {
+                                header.Cell().Element(CellStyle).Text("Id");
+                                header.Cell().Element(CellStyle).Text("Nombre");
+                                header.Cell().Element(CellStyle).Text("Habilitada");
+                            });
+
+                            foreach (var categoria in categorias)
+                            {
+                                table.Cell().Element(CellStyle).Text(categoria.Id.ToString());
+                                table.Cell().Element(CellStyle).Text(categoria.Nombre);
+                                table.Cell().Element(CellStyle).Text(categoria.habilitada == 1 ? "Sí" : "No");
+                            }
+                        });
+
+                    page.Footer()
+                        .AlignCenter()
+                        .Text(x => x.CurrentPageNumber());
+                });
+            });
+
+            var pdfBytes = pdfDocument.GeneratePdf();
+            return File(pdfBytes, "application/pdf", "Reporte_Categorias.pdf");
+        }
+
+
     }
+
+
+    
 }
 
